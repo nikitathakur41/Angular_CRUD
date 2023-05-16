@@ -1,0 +1,186 @@
+<p>PLEASE FILL THE FORM !</p>
+<form  class = "container" [formGroup]="registerform" (ngSubmit)="registerformdata()">
+  <div class="form-row">
+      
+      <div class="form-group col-3">
+          <label> Name</label>
+          <input type="text" formControlName="name" placeholder="Fill your name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required"> Name is required!</div>
+          </div>
+      </div>
+      <div class="form-group col-3">
+          <label>Age</label>
+          <input type="text" formControlName="age" placeholder="Fill your age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
+          <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+              <div *ngIf="f.age.errors.required">age is required!</div>
+          </div>
+      </div>
+  </div>
+  <div class="form-group col-3">
+   <label>Role</label>
+   <input type="text" formControlName="role" placeholder="Fill your role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+   <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+       <div *ngIf="f.role.errors.required">role is required!</div>
+   </div>
+</div>
+
+<div class="form-group col-3">
+ <label>Profession</label>
+ <input type="text" formControlName="profession" placeholder="Fill your profession" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profession.errors }" />
+ <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+     <div *ngIf="f.profession.errors.required">profession is required!</div>
+ </div>
+</div>
+
+  <div class="form-group col-3">
+      <label>Email</label>
+      <input type="text" formControlName="email"placeholder="Fill your email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required!</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address!</div>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-3">
+          <label>Password</label>
+          <input type="password" formControlName="password"  placeholder = "Fill your password"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+      </div>
+      
+  </div>
+    <button type="submit"  class="btn btn-primary">Submit</button>  
+    <br><br>
+    <a class="navbar-brand" routerLink="/home">SHOW DATA</a> 
+  </form>
+
+
+  <!-- <form [formGroup]="registerform" (ngSubmit)="registerformdata()">
+  <div class="form-row">
+      
+      <div class="form-group col-5">
+          <label> Name</label>
+          <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required"> Name is required</div>
+          </div>
+      </div>
+      <div class="form-group col-5">
+          <label>Age</label>
+          <input type="text" formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+          <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+              <div *ngIf="f.role.errors.required">Age is required</div>
+          </div>
+      </div>
+  </div>
+  <div class="form-group col-5">
+    <label> Role</label>
+    <input type="text" formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+    <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+        <div *ngIf="f.role.errors.required"> Role is required</div>
+    </div>
+</div>
+<div class="form-group col-5">
+  <label> Profession</label>
+  <input type="text" formControlName="profession" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profession.errors }" />
+  <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+      <div *ngIf="f.profession.errors.required"> Profession is required</div>
+  </div>
+</div>
+
+  <div class="form-group">
+      <label>Email</label>
+      <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
+  </div>
+  
+ <div class="form-group col">
+          <label>Password</label>
+          <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+          <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+              <div *ngIf="f.Password.errors.required">Password is required</div>
+              <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+      </div>
+       
+    <button type="submit"  class="btn btn-primary">Submit</button>  
+    <br><br>
+    <a class="navbar-brand" routerLink="/home">SHOW DATA</a> 
+  </form> 
+
+ -->
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form #Register!="ngForm" (ngSubmit)="PostData(Register.value)" class="borderp-3 rounded-3">
+  <div class="row g-0">
+    <div class=" col text-center p-2 mb-3 bg-light">
+      <span class="fs-3">Register!</span>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label>Name</label>
+        <input type="text" class="form-control" id="name" ngModel name="name" placeholder="Enter your name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label>Age</label>
+        <input type="number" class="form-control" id="age" ngModel name="age" placeholder="Enter your age">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label>Role</label>
+        <input type="text" class="form-control" id="role" ngModel name="role" placeholder="Enter your role">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label>Profession</label>
+        <input type="text" class="form-control" id="profession" ngModel name="profession"
+          placeholder="Enter your profession">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" id="email" ngModel name="email" placeholder="Enter your email">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form> -->

@@ -1,0 +1,22 @@
+
+.container {
+  border: 2px dashed rgb(34, 25, 25);
+  padding: 20px; 
+  margin: 20px;
+  background-color: rgb(91, 83, 124);
+  color:black;
+  width:50%;
+  height: 75%;
+  direction: flex;
+  
+  justify-content:center
+  }
+  .p{
+    text-align: right;
+    background-color: blanchedalmond;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: black;
+  }
